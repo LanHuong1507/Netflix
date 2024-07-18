@@ -1,25 +1,28 @@
-const tabItems = document.querySelectorAll(".tab-item");
-const tabContentItems = document.querySelectorAll(".tab-content-item");
+// main.js
 
-// Select tab content
-function selectItem(e) {
-  removeBorder();
-  removeShow();
-  // Add border to current tab
-  this.classList.add("tab-border");
-  // Grab content item from DOM
-  const tabContentItem = document.querySelector(`#${this.id}-content`);
-  // Add show class
-  tabContentItem.classList.add("show");
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tab-item");
+  const tabContents = document.querySelectorAll(".tab-content-item");
 
-function removeBorder() {
-  tabItems.forEach(item => item.classList.remove("tab-border"));
-}
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.querySelector('p').dataset.target;
+      activateTab(target);
+      toggleTabBorder(tab);
+    });
+  });
 
-function removeShow() {
-  tabContentItems.forEach(item => item.classList.remove("show"));
-}
+  function activateTab(target) {
+    tabContents.forEach((content) => {
+      content.classList.remove("show");
+    });
+    document.getElementById(target).classList.add("show");
+  }
 
-// Listen for tab click
-tabItems.forEach(item => item.addEventListener("click", selectItem));
+  function toggleTabBorder(selectedTab) {
+    tabs.forEach((tab) => {
+      tab.classList.remove("tab-border");
+    });
+    selectedTab.classList.add("tab-border");
+  }
+});

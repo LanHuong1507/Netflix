@@ -141,7 +141,7 @@
   }
   
   .tab-border {
-    border-bottom: var(--primary-color) 4px solid;
+    border-bottom: 4px solid var(--primary-color);
   }
   
   /* Tab Content */
