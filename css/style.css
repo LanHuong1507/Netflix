@@ -189,31 +189,82 @@
   }
   
   /*  Table  */
-  .table {
-    width: 100%;
-    margin-top: 2rem;
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
-  .table thead th {
-    text-transform: uppercase;
-    padding: 0.8rem;
-  }
-  
-  .table tbody tr td {
-    color: #999;
-    padding: 0.8rem 1.2rem;
-    text-align: center;
-  }
-  
-  .table tbody tr td:first-child {
-    text-align: left;
-  }
-  
-  .table tbody tr:nth-child(odd) {
-    background: #222;
-  }
+.pricing-selectors {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.btn-plan {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-plan.active {
+  background: #333; /* Darker color for selected plan */
+}
+
+.btn-trial {
+  background: #d9534f; /* Red color for free trial button */
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.table th, .table td {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.table th {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.table td {
+  border: 1px solid #ddd;
+}
+
+.table i {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.table .fa-times {
+  color: #d9534f;
+}
+
+.table .fa-check {
+  color: #5bc0de;
+}
+
+.table td i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.table td {
+  padding: 0.75rem;
+}
+
+.table tr {
+  height: 50px;
+}
+
   
   /* Footer */
   .footer {
@@ -274,32 +325,26 @@
     color: #999;
   }
   
-  /* Buttons */
   .btn {
     display: inline-block;
     background: var(--primary-color);
     color: #fff;
     padding: 0.4rem 1.3rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     border: none;
     cursor: pointer;
-    margin-right: 0.5rem;
     outline: none;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
-    border-radius: 2px;
+    border-radius: 5px; /* Ensure all buttons have rounded edges */
   }
   
   .btn:hover {
     opacity: 0.9;
   }
   
-  .btn-rounded {
-    border-radius: 5px;
-  }
-  
   .btn-xl {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     padding: 1.5rem 2.1rem;
     text-transform: uppercase;
   }
@@ -312,6 +357,21 @@
   
   .btn-icon {
     margin-left: 0.5rem;
+  }
+  
+  /* Additional Styles for Login Button */
+  .showcase-top a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .showcase-top .btn-signin {
+    right: 12%; /* Adjusted position */
+  }
+  
+  .showcase-top .btn-login {
+    right: 5%; /* Adjusted position */
   }
   
   /*  Media Queries  */
